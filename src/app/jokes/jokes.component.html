@@ -5,8 +5,9 @@
         </div>
         <div class="spoiler-button">
             <button class="btn btn-success" *ngIf="!joke.revealed" (click)="joke.revealed = !joke.revealed">Reveal Answer</button>
-            <h1 *ngIf="joke.revealed">{{joke.answer}} ({{joke.character}}) </h1>
-            <h1 *ngFor="let jyutping in joke.jyutpings">({{jyutping.ping}}<sup>{{jyutping.tone}}</sup>)</h1>
+            <h1 *ngIf="joke.revealed">{{joke.answer}} ({{joke.character}}) 
+                (<span class="jyutping" *ngFor="let jyutping of joke.jyutpings">{{jyutping.ping}}<sup>{{jyutping.tone}}</sup></span>)
+            </h1>
         </div>
     </div>
 </div>
