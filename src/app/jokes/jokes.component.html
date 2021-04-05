@@ -1,4 +1,12 @@
-<div>
-    <p>Why did the guy who lost all his vegetables resort to a life of crime?</p>   
-    <p>He was left with no choys (菜s) (coi<sup>3</sup>)</p>
+<div>   
+    <div class="pod" *ngFor="let joke of jokes; let i = index">
+        <div class="top-bar">
+            <h1>{{joke.question}}</h1>
+        </div>
+        <div class="spoiler-button">
+            <button class="btn btn-success" *ngIf="!joke.revealed" (click)="joke.revealed = !joke.revealed">Reveal Answer</button>
+            <h1 *ngIf="joke.revealed">{{joke.answer}} ({{joke.character}}) </h1>
+            <h1 *ngFor="let jyutping in joke.jyutpings">({{jyutping.ping}}<sup>{{jyutping.tone}}</sup>)</h1>
+        </div>
+    </div>
 </div>

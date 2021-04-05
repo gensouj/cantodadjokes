@@ -1,21 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
 
-$black: black;
+$color-black: #212529;
+$color-white: white;
+$color-grey: grey;
+$color-black-border: #32383e;
+$xl-screen: 1900px;
+$lg-screen: 1400px;
+$md-screen: 900px;
+$sm-screen: 400px;
+$font-size-large: 30px;
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
 
     h1 {
-        font-size: 40px;
+        font-size: 30px;
         margin: 0;
+        padding: 15px;
+        text-align: center;
     }
 
     h2 {
         font-size: 20px;
-        margin: 0;
+        margin: 10px;
     }
 
     .main {
-        padding: 10px 40px;
+        @media only screen and (min-width: $sm-screen) {
+            padding: 40px;
+        }
+        @media only screen and (min-width: $md-screen) {
+            padding: 40px 80px;
+        }
+        @media only screen and (min-width: $lg-screen) {
+            padding: 40px 120px;
+        }
+        @media only screen and (min-width: $xl-screen) {
+            padding: 40px 160px;
+        }
     }
+
+    .pod {
+        background-color: $color-white;
+        border-radius: 6px;
+        box-shadow: 10px 10px 5px $color-grey;
+        margin-bottom: 25px;
+
+        .top-bar {
+            color: $color-white;
+            background-color: $color-black;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+    }    
 }

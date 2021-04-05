@@ -1,0 +1,10 @@
+@import '../../styles.scss';
+
+.spoiler-button {
+    text-align: center;
+    padding: 15px 0;
+
+    .btn-success {
+        font-size: $font-size-large;
+    }
+}
